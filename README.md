@@ -27,7 +27,7 @@ The program lets you choose a shift value and moves each letter by that amount.
  An autodecrypt function searches for the most likely table of substitutions.
 
  (The algorithm uses a hill-climbing algorithm using quadgrams.
- For more informtion, see http://practicalcryptography.com/cryptanalysis/text-characterisation/quadgrams/
+ See http://practicalcryptography.com/cryptanalysis/text-characterisation/quadgrams/
  )
 
  ## Vigenere Cipher
