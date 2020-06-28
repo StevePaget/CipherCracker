@@ -161,6 +161,7 @@ class App:
     def showVigenere(self):
         self.switchMode("vigenere")
         self.vigenereCanvas.delete(ALL)
+        self.vigkey.delete(ALL)
 
     def vigkeychanged(self,e):
         newkey = self.vigkey.get()
@@ -469,10 +470,9 @@ class App:
     def vigCanvasClicked(self,e):
         itemclicked = (e.y-40)//95
         if 0 <= itemclicked and self.viganswers:
-            self.decryptedbox.delete(1.0, END)
-            self.decryptedbox.insert(1.0, self.viganswers[itemclicked][3])
             self.vigkey.delete(0, END)
             self.vigkey.insert(0, self.viganswers[itemclicked][2])
+            self.vigkeychanged(None)
 
 
 

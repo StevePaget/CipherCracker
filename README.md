@@ -42,3 +42,9 @@ The program lets you choose a shift value and moves each letter by that amount.
  An autodecrypt function first finds the most likely key lengths, then for each key length it searches for  keywords (or strings) that result in likely plaintext.
 
  (The algorithm uses Index of Coincidence as explained here: http://www.practicalcryptography.com/cryptanalysis/stochastic-searching/cryptanalysis-vigenere-cipher/ )
+
+
+ # To-do
+ At the moment, the tool is focused on decryption, rather than encyption. Making sample texts to play with is a bit of a fudge, and is especially tricky for Vigenere.
+
+ I plan to add a switch from decrypt to encrypt, as well as include some sample texts.
