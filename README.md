@@ -21,16 +21,13 @@ The program lets you choose a shift value and moves each letter by that amount.
  The program will let you enter your own swap table, or choose a random one
 
  It also performs frequency analysis to assist in manual decryption.
- There is a vowel trowel which finds "sociable letters"
- From https://www.simonsingh.net/The_Black_Chamber/substitutioncrackingtool.html :
- >Vowels are 'sociable', because they are found next to virtually every other letter of the alphabet.Consonants on the other hand are rather snobbish; the letter B is rarely found next to C, D, F, H etc.
-
->So one way to spot vowels is to see how many times each ciphertext letter appears next to every other ciphertext letter.
+ 
+ See https://www.youtube.com/watch?v=LhS8N6oJdno&t=2s for details.
 
  An autodecrypt function searches for the most likely table of substitutions.
 
  (The algorithm uses a hill-climbing algorithm using quadgrams.
- For more informtion, see http://practicalcryptography.com/cryptanalysis/text-characterisation/quadgrams/
+ See http://practicalcryptography.com/cryptanalysis/text-characterisation/quadgrams/
  )
 
  ## Vigenere Cipher
