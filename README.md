@@ -1,4 +1,4 @@
-# CipherCracker
+# CipherCracker.py
 
 
 This program holds a series of tools to aid with decryption of text using some simple ciphers.
