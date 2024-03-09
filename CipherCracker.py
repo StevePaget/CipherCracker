@@ -7,6 +7,7 @@ from ngram_score import ngram_score
 import CalcIC
 import multiprocessing as mp
 
+fitness = ngram_score('english_quadgrams.txt')  # load our quadgram statistics
 
 class App:
     def __init__(self, master):
@@ -505,7 +506,6 @@ class App:
 
     def findBestShift(self):
         text=self.inputContents
-        #fitness = ngram_score('english_quadgrams.txt')  # load our quadgram statistics
         maxscore = CalcIC.getComparativeIC(text)
         self.shiftAnimation(1,text,maxscore, 0, text)
            
@@ -593,7 +593,7 @@ def autoVigenereDecrypt(text):
     strippedtext = "".join(c.upper() for c in text if c.isalpha())
     # find length
     answers = []
-    for length in range(1,15):
+    for length in range(1,len(strippedtext)//5):
         #print("Length", length)
         totalIC = 0
         plaintextColumns = []
@@ -605,13 +605,12 @@ def autoVigenereDecrypt(text):
             keycandidate += chr((26-shift)%26+65)
             plaintextColumns.append(plaintextColumn)
         plaintext = "".join([val if val else "" for pair in itertools.zip_longest(*plaintextColumns) for val in pair])
-        answers.append((length, totalIC/length, keycandidate, plaintext))
+        answers.append((length, fitness.score(plaintext), keycandidate, plaintext))
     answers.sort(reverse=True,key=lambda i:i[1])
     return answers
 
         
 def autoDecryptRSubTask(PipeIn, ciphertextContents):
-        fitness = ngram_score('english_quadgrams.txt')  # load our quadgram statistics
         maxkey = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
         maxscore = -99e9
         parentscore, parentkey = maxscore, maxkey[:]

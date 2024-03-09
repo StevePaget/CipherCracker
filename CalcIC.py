@@ -1,4 +1,5 @@
 # Calculate Index of Coincidence
+import math 
 
 def getIC(text):
     text = "".join([c.upper() for c in text if c.isalpha()])
